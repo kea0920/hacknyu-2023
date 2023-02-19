@@ -5,11 +5,13 @@ var nScore = 0
 
 var qCount = 0
 
-/* QUESTION SCHEMATICS */
-var question = document.getElementById("allQuestions");
-var questionGenButton = document.getElementById("questionGenButton");
-
-questionGenButton.addEventListener("click", returnQuestions);
+var section = [
+  "0", // placeholder
+  "Water Waste",
+  "Home Energy Usage",
+  "Agriculture",
+  "Transportation"
+]
 
 var questions = [
   "0", // placeholder value
@@ -22,29 +24,6 @@ var questions = [
   "How often do you use public transportation, bike, or walk?",
   "How many miles do you fly on a plane?"
 ]
-
-var questionNum = questions.length();
-var answerNum = 2;
-
-var questionElement = ["0"] // placeholder value
-
-var section = [
-  "0", // placeholder
-  "Water Waste",
-  "Home Energy Usage",
-  "Agriculture",
-  "Transportation"
-]
-
-var buttonIDs = ["0"]
-var buttonElementByID = ["0"]
-var buttonEventListener = ["0"]
-
-buttonIDs = generateButtonIDs()
-buttonElementByID = getButtonElementByID()
-buttonEventListener = addButtonEventListeners()
-
-var buttonNum = buttonIDs.length();
 
 var buttonNames = [
   "0", // placeholder value
@@ -65,11 +44,6 @@ var buttonNames = [
   "0-50 miles",
   "100+ miles"
 ]
-
-/* FACT SCHEMATICS */
-var factIDs = ["0"]
-factIDs = generateFactIDs();
-var factIDNum = factIDs.length();
 
 /* FACTS */
 // q1-q2 = water
@@ -101,8 +75,26 @@ var negFacts = [
   "Planes use a lot of fuel, meaning that there is a lot of CO2 released and therefore it's very bad for global warming. Overall, try to fly less"
 ]
 
-var facts = ["0"]
-facts = displayFacts();
+/* QUESTION SCHEMATICS */
+var questionGen = document.getElementById("allQuestions");
+var questionGenButton = document.getElementById("questionGenButton");
+
+questionGenButton.addEventListener("click", returnQuestions);
+
+var questionNum = questions.length();
+var answerNum = 2;
+
+var buttonIDs = generateButtonIDs()
+var buttonElementByID = getButtonElementByID()
+var buttonEventListener = addButtonEventListeners()
+
+var buttonNum = buttonIDs.length();
+
+/* FACT SCHEMATICS */
+var factIDs = generateFactIDs();
+var factIDNum = factIDs.length();
+
+var facts = displayFacts();
 
 var result = document.getElementById("result")
 addButtonEventListeners();
@@ -137,45 +129,47 @@ addButtonEventListeners();
 // COMMENT OUT END HERE
 
 /* GENERATE QUESTION ELEMENT */
-// returns all generated question elements
-function returnQuestions(){
-  question.innerHTML = questions[1];
+// create single question
+function generateQuestion(questionNum, answer1, answer2){
+  var question = generateQuestionStarter(questionNum) + generateAnswers(answer1, answer2) + generateQuestionFinisher
+  return question
 }
 
-// creates a new question div class
-function generateQuestions(){
-  var currentAnswer = 1;
-  var currentSection = 1;
+// create question starter
+function generateQuestionStarter(questionNum){
+  return(
+    '<div class="question">' +
+    '<h3>' + questions[questionNum] + '</h3>'
+  )
+}
 
-  for (i = 1; i < questionNum; i++){
-    if (i % 2 == 0){
-      '<h2>' + section[currentSection] + '</h2>'
-      currentSection++
-    }
-    for (j = 1; j < answerNum + 1; j++){
-        '<div class="question">' +
-          '<h3>' + questions[i] + '</h3>' +
-          '<br></br>' +
-          generateAnswers(currentAnswer) +
-        '</div>';
-      currentAnswer++
-    }
-  }
+// create question finisher
+function generateQuestionFinisher(){
+  return(
+    '</div>'
+  )
 }
 
 // creates a new answer div class
-function generateAnswers(currentAnswer){
-  return (
+function generateAnswers(answer1, answer2){
+  return(
     '<div class="answer-choice">' +
-      '<button id="' + buttonIDs[currentAnswer] + '">'+ buttonNames[currentAnswer] + '</button>' +
+      '<br>' +
+      '<button id="' + buttonIDs[answer1] + '">'+ buttonNames[answer1] + '</button>' +
+    '</div>' +
+    '<div class="answer-choice">' +
+      '<br>' +
+      '<button id="' + buttonIDs[answer2] + '">'+ buttonNames[answer2] + '</button>' +
     '</div>'
-  );
+  )
 }
 
 /* BUTTONS */
 // create button ids
 function generateButtonIDs(answerNum){
+  var buttonIDs = ["0"]
   var buttonName = "";
+
   // test out this logic!
   for (let i = 1; i < questionNum; i++){
     for (let j = 1; j < answerNum + 1; j++){
@@ -183,37 +177,50 @@ function generateButtonIDs(answerNum){
       buttonIDs.append(buttonName);
     }
   }
+  return buttonIDs
 }
 
 // get button element by id
 function getButtonElementByID(){
+  var buttonElementByID = ["0"]
   var elementID = "";
+
   for (i = 1; i < buttonNum; i++){
     elementID = document.getElementById(buttonIDs[i]);
     buttonElementByID.append(elementID);
   }
+  return buttonElementByID
 }
 
 // add button event listeners for button *elements*
 function addButtonEventListeners(){
+  var buttonEventListener = ["0"]
+
   for (i = 1; i < buttonNum; i++){
-    buttonElementByID[i].addEventListener("click", facts[i]);
+    var eventListener = buttonElementByID[i].addEventListener("click", facts[i]);
+    buttonEventListener.append(eventListener)
   }
+
+  return buttonEventListener
 }
 
 // creates a fact id in the form: q#f#
 function generateFactIDs(){
+  var factIDs = ["0"]
   var factID = "";
+
   for (i = 1; i < questionNum; i++){
     for (j = 1; j < answerNum + 1; j++){
       factID = "q" + i + "f" + j;
       factIDs.append(factID);
     }
   }
+  return factIDs
 }
 
 /* GENERATE FACTS */
 function displayFacts(){
+  var facts = ["0"]
   var currentNegFact = 1
   var currentPosFact= 1
 
@@ -229,6 +236,7 @@ function displayFacts(){
       currentPosFact++
     }
   }
+  return facts
 }
 
 function displayPosFacts(currentQuestion){
@@ -237,63 +245,4 @@ function displayPosFacts(currentQuestion){
 
 function displayNegFacts(currentQuestion){
   return negFacts[currentQuestion];
-}
-
-// COMMENT OUT ONCE CONFIRMED WORKING
-function waterG1(){
-  water1.innerHTML = factsG[0];
-}
-function waterB1(){
-  water1.innerHTML = factsB[0];
-}
-function waterG2(){
-  water2.innerHTML = factsG[1];
-}
-function waterB2(){
-  water2.innerHTML = factsB[1];
-}
-
-function homeG1(){
-  home1.innerHTML = factsG[2];
-}
-function homeB1(){
-  home1.innerHTML = factsB[2];
-}
-function homeG2(){
-  home2.innerHTML = factsG[3];
-}
-function homeB2(){
-  home2.innerHTML = factsB[3];
-}
-
-function agriG1(){
-  agri1.innerHTML = factsG[4];
-}
-
-function agriB1(){
-  agri1.innerHTML = factsB[4];
-}
-
-function agriG2(){
-  agri2.innerHTML = factsG[5];
-}
-
-function agriB2(){
-  agri2.innerHTML = factsB[5];
-}
-
-function transportationG1(){
-  agri1.innerHTML = factsG[6];
-}
-
-function transportationB1(){
-  agri1.innerHTML = factsB[6];
-}
-
-function transportationG2(){
-  agri2.innerHTML = factsG[7];
-}
-
-function transportationB2(){
-  agri2.innerHTML = factsB[7];
 }

@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>thisiswhathappens</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="js/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -16,30 +17,44 @@
             <li> <a href="action.html"> How to Help </a></li>
         </ul>
     </nav>
+
     <header>
         <h1>
             this is what happens.
         </h1>
         <p>Take this quiz to find out how your actions affect the world and what you can do to help.</p>
     </header>
-    <script src="script.js" defer></script>
-    <!-- type="text/javascript" -->
 
-    <!-- id="allQuestions" -->
     <main>
-        <div> 
-            <button id="questionGenButton">Start Quiz</button>
-            <p id="allQuestions"> </p>
-        </div>
-    <!--
+        <center>
+            <h2> Water Waste </h2>
+                <div onload="generateQuestion(1, 1, 2);"> </div>
+                <div onload="generateQuestion(2, 3, 4);"> </div>
+            
+            <h2> Home Energy Usage </h2>
+                <div onload="generateQuestion(3, 5, 6);"> </div>
+                <div onload="generateQuestion(4, 7, 8);"> </div>
+            
+            <h2> Agriculture </h2>
+                <div onload="generateQuestion(5, 9, 10);"> </div>
+                <div onload="generateQuestion(6, 11, 12);"> </div>
+
+            <h2> Transportation </h2>
+                <div onload="generateQuestion(7, 13, 14);"> </div>
+                <div onload="generateQuestion(8, 15, 16);"> </div>
+        </center>
+    </main>
+    
+    <!-- <main>
         <center>
             <h2> Water Waste </h2>
 
+
             <div class="question">
+                <img src="assets/farm.jpeg" alt="SHOWER">
+                <h3>HOW LONG ARE YOUR SHOWERS</h3>
 
                 <div class="answer-choice">
-                    <img src="assets/farm.jpeg" alt="SHOWER">
-                    <h3>HOW LONG ARE YOUR SHOWERS</h3>
                     <br>
                     <button id="q1a1">10 minutes and fewer</button>
                 </div>
@@ -171,8 +186,7 @@
                     <p id="transportation2"></p>
                 </div>
         </center>
-    -->
-    </main>
+    </main> -->
 </body>
 
 </html>
