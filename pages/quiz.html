@@ -2,189 +2,183 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>thisiswhathappens</title>
-    <link href="js/style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>thisiswhathappens</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js" defer></script>
+  <!-- fonts used -->
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Kalam:wght@700&display=swap"
+    rel="stylesheet">
+
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li> <a href="index.html"> Home </a></li>
-            <li> <a href="quiz.html"> Quiz </a></li>
-            <li> <a href="action.html"> How to Help </a></li>
-        </ul>
-    </nav>
 
-    <header>
-        <h1>
-            this is what happens.
-        </h1>
-        <p>Take this quiz to find out how your actions affect the world and what you can do to help.</p>
-    </header>
+  <nav>
+    <ul>
+      <a href="index.html"><img id="logo" src="assets/logoBlack.jpeg" alt="Logo" width="170" height="170"></a>
+      <li> <a href="quiz.html"> Quiz </a></li>
+      <li> <a href="action.html"> How to Help </a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <center>
-            <h2> Water Waste </h2>
-            <div class="question">
-                <img src="assets/farm.jpeg" alt="SHOWER">
-                <h3>HOW LONG ARE YOUR SHOWERS</h3>
+  <header>
+    <h1>
+      this is what happens.
+    </h1>
+    <p>
+      Take this quiz to find out how your actions affect the world and what you can do to help.
+    </p>
+  </header>
 
-                <div class="answer-choice">
-                    <br>
-                    <button id="q1a1">10 minutes and fewer</button>
-                </div>
-
-                <div class="answer-choice">
-                    <br>
-                    <button id="q1a2"> Over 10 minutes </button>
-                </div>
-                <p id="water1"></p>
-            </div>
-
-            <div class="question">
-
-                <div class="answer-choice">
-                    <img src="assets/overflow.jpeg" alt="SHOWER">
-                    <h3>How often do you use oil</h3>
-                    <br>
-                    <button id="q2a1">A lot</button>
-                </div>
-
-                <div class="answer-choice">
-                    <br>
-                    <button id="q2a2"> Over 10 minutes </button>
-                </div>
-
-                <p id="water2"></p>
-            </div>
-
-            <h2> Energy Usage in the Home</h2>
-            <div class="question">
-
-                <div class="answer-choice">
-                    <img src="assets/overflow.jpeg" alt="SHOWER">
-                    <h3>HOW MANY APPLIANCES DO YOU HAVE AT HOME</h3>
-                    <br>
-                    <button id="q3a1"> less than 10</button>
-                </div>
-
-                <div class="answer-choice">
-                    <br>
-                    <button id="q3a2"> Over 10 minutes </button>
-                </div>
-                <p id="home1"></p>
-
-                <div class="question">
-
-                    <div class="answer-choice">
-                        <img src="assets/stove.jpeg" alt="SHOWER" width="300" height="200">
-                        <h3>How often do you use gas stoves?</h3>
-                        <br>
-                        <button id="q4a1"> A lot</button>
-                    </div>
-
-                    <div class="answer-choice">
-                        <br>
-                        <button id="q4a2"> A little </button>
-                    </div>
-                    <p id="home2"></p>
-                </div>
-
-                <h2> Agriculture</h2>
-
-                <div class="question">
-
-                    <div class="answer-choice">
-                        <img src="assets/market.jpeg" alt="Market" width="300" height="200">
-                        <h3>Do you buy mostly from a supermarket chain or your local farmer?</h3>
-                        <br>
-                        <button id="q5a1">Supermarket chain</button>
-                    </div>
-
-                    <div class="answer-choice">
-                        <br>
-                        <button id="q5a2">Local farmer</button>
-                    </div>
-
-                    <p id="agri1"></p>
-                </div>
-
-
-                <div class="question">
-
-                    <div class="answer-choice">
-                        <img src="assets/farm.jpeg" alt="farm" width="300" height="200">
-                        <h3>How often do you eat animal products</h3>
-                        <br>
-                        <button id="q6a1"> 5-7 days of the week</button>
-                    </div>
-
-                    <div class="answer-choice">
-                        <br>
-                        <button id="q6a2"> 4-0 days of the week </button>
-                    </div>
-
-                    <p id="agri2"></p>
-                </div>
-
-
-                <h2> Transportation</h2>
-
-                <div class="question">
-
-                    <div class="answer-choice">
-                        <img src="assets/market.jpeg" alt="Market" width="300" height="200">
-                        <h3>How often do you use public transportation, bike, or walk?</h3>
-                        <br>
-                        <button id="q7a1">Everyday</button>
-                    </div>
-
-                    <div class="answer-choice">
-                        <br>
-                        <button id="q7a2">3 to 0 days of the week</button>
-                    </div>
-                    <p id="transportation1"></p>
-                </div>
-                <div class="question">
-
-                    <div class="answer-choice">
-                        <img src="assets/farm.jpeg" alt="farm" width="300" height="200">
-                        <h3>How many miles do you fly on a plane</h3>
-                        <br>
-                        <button id="q8a1"> 5-7 days of the week</button>
-                    </div>
-
-                    <div class="answer-choice">
-                        <br>
-                        <button id="q8a2"> 4-0 days of the week </button>
-                    </div>
-                    <p id="transportation2"></p>
-                </div>
-        </center>
-    </main>
-
-<!-- <main>
+  <main>
     <center>
-        <h2> Water Waste </h2>
-            <div onload="generateQuestion(1, 1, 2);"> </div>
-            <div onload="generateQuestion(2, 3, 4);"> </div>
-        
-        <h2> Home Energy Usage </h2>
-            <div onload="generateQuestion(3, 5, 6);"> </div>
-            <div onload="generateQuestion(4, 7, 8);"> </div>
-        
-        <h2> Agriculture </h2>
-            <div onload="generateQuestion(5, 9, 10);"> </div>
-            <div onload="generateQuestion(6, 11, 12);"> </div>
+      <h2> Water Waste </h2>
 
-        <h2> Transportation </h2>
-            <div onload="generateQuestion(7, 13, 14);"> </div>
-            <div onload="generateQuestion(8, 15, 16);"> </div>
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/overflow.jpeg" alt="SHOWER">
+          <h3>How long are your showers? </h3>
+          <br>
+          <button id="q1a1">10 minutes and fewer</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q1a2"> Over 10 minutes </button>
+        </div>
+        <p id="water1"> </p>
+      </div>
+
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/oil.jpeg" alt="oil mining" width="300" height="200">
+          <h3>How much is your house powered by oil</h3>
+          <br>
+          <button id="q2a1">A little or none</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q2a2"> A lot </button>
+        </div>
+
+        <p id="water2"></p>
+      </div>
+
+      <h2> Home Energy Usage </h2>
+      
+      <div class="question">
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/laundry.webp" alt="laundry" width="300" height="200">
+          <h3>How many appliances do you leave plugged in at home?</h3>
+          <br>
+          <button id="q3a1"> less than 10 appliances</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q3a2"> over 10 appliances </button>
+        </div>
+        <p id="home1"></p>
+      </div>
+      
+      <div class="question">
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/stove.jpeg" alt="stove" width="300" height="200">
+          <h3>Do you use electric stoves or gas stoves?</h3>
+          <br>
+          <button id="q4a1"> Electric stove</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q4a2"> Gas stove </button>
+        </div>
+
+        <p id="home2"></p>
+      </div>
+
+      <h2> Agriculture</h2>
+
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/market.jpeg" alt="Market" width="300" height="200">
+          <h3>Do you buy mostly from a supermarket chain or your local farmer?</h3>
+          <br>
+          <button id="q5a1">Local farmer</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q5a2">Supermarket chain</button>
+        </div>
+
+        <p id="agri1"></p>
+      </div>
+
+
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/farm.jpeg" alt="farm" width="300" height="200">
+          <h3>How often do you eat animal products</h3>
+          <br>
+          <button id="q6a1"> 0-4 days of the week</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q6a2">5-7 days of the week </button>
+        </div>
+
+        <p id="agri2"> </p>
+      </div>
+
+
+      <h2> Transportation</h2>
+
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/train.jpeg" alt="subway" width="300" height="200">
+          <h3>How often do you use public transportation, bike, or walk?</h3>
+          <br>
+          <button id="q7a1">Everyday</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q7a2">0 to 3 days of the week</button>
+        </div>
+        <p id="transportation1"> </p>
+
+      </div>
+      <div class="question">
+
+        <div class="answer-choice">
+          <img id="quizQuestion"src="assets/plane.webp" alt="plane" width="300" height="200">
+          <h3>How many miles do you fly on a plane per year</h3>
+          <br>
+          <button id="q8a1"> 0-100 miles</button>
+        </div>
+
+        <div class="answer-choice">
+          <br>
+          <button id="q8a2"> 200+ miles </button>
+        </div>
+        <p id="transportation2"></p>
+      </div>
+
+      <h2 id="result">Your result is...</h2>
+      <button id="restart">Restart</button>
+      <a href="action.html"><button>Check out our tip page here!</button> </a>
     </center>
-    </main> -->
+  </main>
 </body>
 
 </html>

@@ -2,27 +2,51 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>thisiswhathappens</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>thisiswhathappens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <!-- fonts used -->
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Kalam:wght@700&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-    <nav>
-        <ul>
-            <li> <a href="index.html"> Home </a></li>
-            <li> <a href="quiz.html"> Quiz </a></li>
-            <li> <a href="action.html"> How to Help </a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>
-            this is what happens.
-        </h1>
-        <p>Take this quiz to find out how your actions affect the world and what you can do to help.</p>
-    </header>
-    <script src="script.js"></script>
+<body id="home">
+  <header>
+    <h1 id="mainHead">
+      Calc-eco: this is what happens.
+    </h1>
+    <a href="index.html"><img id="logoHome"src="assets/logo.jpeg" alt="Logo" width="170" height="170"></a>
+    <div class="myDiv">
+      <div class="col1">
+        Take this quiz to find out how your actions affect the world and what you can do to help.
+      </div>
+      <div class="spaceBreak"></div>
+      <div class="col2">
+        Or see what you can do to reduce your harmful environmental impact.
+      </div>
+    </div>
+    
+  </header>
+
+  <nav>
+    <ul class="myDiv">
+      <li id="hpOption"> <a href="quiz.html"> Quiz </a></li>
+      <div class="spaceBreak"></div>
+      <div class="spaceBreak"></div>
+      <div class="spaceBreak"></div>
+     
+      <li id="hpOption"> <a href="action.html"> How to Help </a></li>
+    </ul>
+  </nav>
+  <center>
+    <img id="collage"src="assets/collage.png" width="400" height="300">
+      </center>
+  <script src="script.js"></script>
 </body>
 
 </html>
